@@ -1,4 +1,3 @@
-
 --Create Table ACTOR with Primary Key as ACT_ID
 
 CREATE TABLE ACTOR (
@@ -8,9 +7,7 @@ ACT_GENDER CHAR(1));
 
 DESC ACTOR;
 
-----------------------------
 
---Create Table DIRECTOR with Primary Key as DIR_ID
 
 CREATE TABLE DIRECTOR(
 DIR_ID INTEGER PRIMARY KEY,
@@ -19,9 +16,6 @@ DIR_PHONE INTEGER);
 
 DESC DIRECTOR;
 
-----------------------------
-
---Create Table MOVIES with Primary Key as MOV_ID and Foreign Key DIR_ID referring DIRECTOR table
 
 CREATE TABLE MOVIES(
 MOV_ID INTEGER PRIMARY KEY,
@@ -33,9 +27,7 @@ FOREIGN KEY (DIR_ID) REFERENCES DIRECTOR(DIR_ID));
 
 DESC MOVIES;
 
-----------------------------
 
---Create Table MOVIE_CAST with Primary Key as MOV_ID and ACT_ID and Foreign Key ACT_ID and MOV_ID referring ACTOR and MOVIES tables respectively
 
 CREATE TABLE MOVIE_CAST(
 ACT_ID INTEGER,
@@ -47,9 +39,7 @@ FOREIGN KEY (MOV_ID) REFERENCES MOVIES(MOV_ID));
 
 DESC MOVIE_CAST;
 
-----------------------------
 
---Create Table RATING with Primary Key as MOV_ID and Foreign Key MOV_ID referring MOVIES table
 
 CREATE TABLE RATING(
 MOV_ID INTEGER PRIMARY KEY,
